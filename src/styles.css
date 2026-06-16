@@ -1,0 +1,79 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette — Bukowski Brothers Plumbing */
+  --background: #F4F2ED;       /* warm off-white */
+  --foreground: #1B1F23;       /* charcoal body text */
+  --card: #ffffff;
+  --card-foreground: #1B1F23;
+  --popover: #ffffff;
+  --popover-foreground: #1B1F23;
+  --primary: #0F2C46;          /* deep ink navy — header, footer, dark sections */
+  --primary-foreground: #F4F2ED;
+  --secondary: #3A7CA5;        /* steel blue — accents, links, hover */
+  --secondary-foreground: #ffffff;
+  --muted: #e5e3de;
+  --muted-foreground: #5f6370;
+  --accent: #D9822B;           /* warm signal orange — every CTA and phone number */
+  --accent-foreground: #ffffff;
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+  --border: #d5d2cb;
+  --input: #e8e6e1;
+  --ring: #3A7CA5;
+
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
